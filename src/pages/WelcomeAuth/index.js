@@ -11,7 +11,7 @@ const WelcomeAuth = ({navigation}) => {
         
       <Image
           source={require('../../image/logo.png')}
-          style={{width: 200, height: 200, marginTop:80}}
+          style={{width: 200, height: 200}}
         />
         <Text
           style={{
