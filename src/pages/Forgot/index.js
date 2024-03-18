@@ -3,9 +3,8 @@ import React, {useState, useEffect} from 'react';
 import {Image, StatusBar, Text, View, TextInput, TouchableOpacity} from 'react-native';
 import TextBox from "./TextBox";
 
-const Login: React.FC<Props> = ({navigation}) => {
+const Forgot: React.FC<Props> = ({navigation}) => {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
 
   return (
     <View
@@ -32,11 +31,10 @@ const Login: React.FC<Props> = ({navigation}) => {
             marginBottom: 6,
             textAlign: 'center',
           }}>
-          Silahkan masukkan email dan password
+          Silahkan masukkan email untuk mereset password
         </Text>
       </View>
       <TextBox email={email} setEmail={setEmail} placeholder="Email" isPassword={false}/>
-      <TextBox email={password} setEmail={setPassword} placeholder="Password" isPassword={true} />
 
       <TouchableOpacity style={{
         backgroundColor: '#A55EEA',
@@ -54,22 +52,22 @@ const Login: React.FC<Props> = ({navigation}) => {
             color: 'white',
             textTransform: 'uppercase',
             textAlign: 'center',
-          }}>Login</Text>
+          }}>Reset</Text>
       </TouchableOpacity>
 
 
       <View style={{marginHorizontal:20, flexDirection:'row', marginTop: 10}}>
-        <TouchableOpacity onPress={() => navigation.replace("Register")} style={{flex: 1 }}>
-          <Text style={{fontWeight:'bold'}}>Sign Up</Text>
+        <TouchableOpacity onPress={() => navigation.replace("Login")} style={{flex: 1 }}>
+          <Text style={{fontWeight:'bold'}}>Sign In</Text>
         </TouchableOpacity>
-        <TouchableOpacity  onPress={() => navigation.replace("Forgot")} 
+        <TouchableOpacity onPress={() => navigation.replace("WelcomeAuth")} 
           style={{flex: 1, justifyContent:'center', alignItems:'flex-end'
         }}>
-          <Text>Forgot Password</Text>
+          <Text>Welcome Page</Text>
         </TouchableOpacity>
       </View>
     </View>
   );
 };
 
-export default Login;
+export default Forgot;

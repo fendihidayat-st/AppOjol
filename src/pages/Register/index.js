@@ -5,6 +5,7 @@ import TextBox from "./TextBox";
 
 const Register: React.FC<Props> = ({navigation}) => {
   const [name, setName] = useState('');
+  const [telp, setTelp] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -37,6 +38,7 @@ const Register: React.FC<Props> = ({navigation}) => {
         </Text>
       </View>
       <TextBox email={name} setEmail={setName} placeholder="Full Name" isPassword={false}/>
+      <TextBox email={telp} setEmail={setTelp} placeholder="WA" isPassword={false}/>
       <TextBox email={email} setEmail={setEmail} placeholder="Email" isPassword={false}/>
       <TextBox email={password} setEmail={setPassword} placeholder="Password" isPassword={true} />
 
@@ -61,10 +63,10 @@ const Register: React.FC<Props> = ({navigation}) => {
 
 
       <View style={{marginHorizontal:20, flexDirection:'row', marginTop: 10}}>
-        <TouchableOpacity onPress={() => navigation.navigate("Login")} style={{flex: 1 }}>
+        <TouchableOpacity onPress={() => navigation.replace("Login")} style={{flex: 1 }}>
           <Text style={{fontWeight:'bold'}}>Sign In</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate("WelcomeAuth")} 
+        <TouchableOpacity onPress={() => navigation.replace("WelcomeAuth")} 
           style={{flex: 1, justifyContent:'center', alignItems:'flex-end'
         }}>
           <Text>Welcome Page</Text>
